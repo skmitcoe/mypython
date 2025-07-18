@@ -8,6 +8,7 @@ if st.button('Generate'):
     st.write("This is the generated text on click of Generate button")
 
 audio_file = st.audio_input("Record your voice message")
+r = sr.Recognizer()
 
 if audio_file:
     print(audio_file.name)
