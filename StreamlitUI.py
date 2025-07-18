@@ -6,6 +6,12 @@ st.write("My first app on streamlit cloud")
 if st.button('Generate'):
     st.write("This is the generated text on click of Generate button")
 
+audio_file = st.audio_input("Record your voice message")
+
+if audio_file:
+    print(audio_file.name)
+    print(audio_file)
+
 select_option = st.selectbox('What is you favourite color?', ("Red", "Blue", "Green"), index=None, placeholder="Enter your favourite color")
 if select_option:
     st.write('Your favourite color is:', select_option)
