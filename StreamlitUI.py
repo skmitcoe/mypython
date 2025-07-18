@@ -1,8 +1,8 @@
 import streamlit as st
 import speech_recognition as sr
 
-st.title(":rainbow[My first streamlit page]")
-st.write("My first app on streamlit cloud")
+st.title(":rainbow[Sumit Kumar's AI Space]")
+st.write("My web page to explore Natural Language Processing")
 
 if st.button('Generate'):
     st.write("This is the generated text on click of Generate button")
