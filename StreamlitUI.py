@@ -1,4 +1,5 @@
 import streamlit as st
+import speech_recognition as sr
 
 st.title(":rainbow[My first streamlit page]")
 st.write("My first app on streamlit cloud")
@@ -10,7 +11,20 @@ audio_file = st.audio_input("Record your voice message")
 
 if audio_file:
     print(audio_file.name)
-    print(audio_file)
+    with open("sumit.wav", "wb") as f:
+        f.write(audio_file.getbuffer())
+        print("Audio file saved successfully")
+
+    with sr.AudioFile("sumit.wav") as source:
+        audio_data = r.record(source)
+        try:
+            text = r.recognize_google(audio_data)
+            st.write(text)
+            print("Transcribed text: ", text)
+        except sr.UnknownValueError:
+            print("Google Speech Recognition could not understand audio")
+        except sr.RequestError as e:
+            print(f"Could not request results from Google Speech Recognition service; {e}")
 
 select_option = st.selectbox('What is you favourite color?', ("Red", "Blue", "Green"), index=None, placeholder="Enter your favourite color")
 if select_option:

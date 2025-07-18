@@ -22,7 +22,6 @@ if audio_file:
 
     with sr.AudioFile("sumit.wav") as source:
         audio_data = r.record(source)
-
         try:
             text = r.recognize_google(audio_data)
             st.write(text)
