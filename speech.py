@@ -1,6 +1,5 @@
 import streamlit as st
 import speech_recognition as sr
-from pydub import AudioSegment
 
 st.title(":rainbow[My first streamlit page]")
 st.write("My first app on streamlit cloud")
