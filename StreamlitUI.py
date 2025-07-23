@@ -66,7 +66,7 @@ def post_call(input_text, dest_lang_code):
 
 dest_lang_code = st.text_input(label="Enter destination language")
 if st.button('Translate to input language'):
-    translated_text = post_call(input_text, "kn")
+    translated_text = post_call(input_text, dest_lang_code)
     st.write(translated_text)
 
 if st.button('Translate to Marathi'):
